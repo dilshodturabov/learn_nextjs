@@ -1,0 +1,5 @@
+{
+  "diffEditor.codeLens": true,
+  "files.autoSave": "afterDelay",
+  "editor.cursorStyle": "block"
+}
