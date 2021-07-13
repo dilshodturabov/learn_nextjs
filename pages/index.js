@@ -1,14 +1,32 @@
-import Head from "next/head";
-import styles from "../styles/Home.module.css";
+import React, { useEffect, useState } from "react";
+import { Fragment } from "react";
 
-export default function Home() {
+export default function index() {
+  // let numbers = [1, 2, 5, -6, 8, 9];
+  // let filtered = numbers.filter((number) => {
+  //   return number >= 0;
+  // });
+  // console.log(filtered);
+
+  // useState hook
+  const [lang, setLang] = useState("Uzb");
+  // function increment() {
+  //   {setCount(count + 2)}
+  // }
+
+  function changer() {
+    {if (lang == "Uzb") {
+      setLang("Rus")
+    } else {
+     setLang("Uzb")
+    }
+    }
+  }
+
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>Dilshod Next App</title>
-        <meta name="description" content="Created by Dilshod Turabov" />
-      </Head>
-        <h1> Today I learn gitHub pull and push! </h1>
-    </div>
+    <Fragment>
+      {/* <p  onClick={changer}>{lang}</p> */}
+      <button onClick={changer}>{lang}</button>
+    </Fragment>
   );
 }
