@@ -13,19 +13,27 @@ export default function index() {
   // function increment() {
   //   {setCount(count + 2)}
   // }
+  const [count, setCount] = useState(10);
+
+  useEffect(() => {
+    document.title = ` You clicked ${count} this`;
+  }, []);
 
   function changer() {
-    {if (lang == "Uzb") {
-      setLang("Rus")
-    } else {
-     setLang("Uzb")
-    }
+    {
+      if (lang == "Uzb") {
+        setLang("Rus");
+      } else {
+        setLang("Uzb");
+      }
     }
   }
 
   return (
     <Fragment>
-      {/* <p  onClick={changer}>{lang}</p> */}
+      <p>You clicked {count} this</p>
+      <button onClick={() => setCount(count + 1)}>Ad</button>
+      <p>{lang}</p>
       <button onClick={changer}>{lang}</button>
     </Fragment>
   );
