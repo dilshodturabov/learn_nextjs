@@ -19,8 +19,9 @@ export default function index() {
     <Fragment>
       <h1>Counter {counter}</h1>
       <Button
-        variant="contained"
+        variant="outlined"
         color="primary"
+        className="mx-2"
         onClick={() => setCounter(counter + 1)}
       >
         Add
@@ -28,9 +29,16 @@ export default function index() {
       <Button
         variant="outlined"
         color="secondary"
+        className="mx-2"
         onClick={() => setCounter(counter - 1)}
       >
         Del
+      </Button>
+      <Button
+        variant="contained"
+        onClick={() => setCounter((pre) => (pre = 1))}
+      >
+        Reset
       </Button>
       {/* Shunchaki o`zim sinash maqsadida */}
       <IconButton
