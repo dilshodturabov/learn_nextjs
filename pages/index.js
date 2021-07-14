@@ -1,40 +1,44 @@
 import React, { useEffect, useState } from "react";
 import { Fragment } from "react";
-
+import Button from "@material-ui/core/Button";
+import IconButton from "@material-ui/core/IconButton";
 export default function index() {
-  // let numbers = [1, 2, 5, -6, 8, 9];
-  // let filtered = numbers.filter((number) => {
-  //   return number >= 0;
-  // });
-  // console.log(filtered);
-
-  // useState hook
-  const [lang, setLang] = useState("Uzb");
-  // function increment() {
-  //   {setCount(count + 2)}
-  // }
-  const [count, setCount] = useState(10);
-
   useEffect(() => {
-    document.title = ` You clicked ${count} this`;
-  }, []);
+    document.title = "This site is fake!!";
+  });
 
-  function changer() {
-    {
-      if (lang == "Uzb") {
-        setLang("Rus");
-      } else {
-        setLang("Uzb");
-      }
-    }
-  }
+  const [counter, setCounter] = useState(0);
+
+  // function increment() {
+  //   {
+  //     setCtounter(() => counter +1)
+  //   }
+  // }
 
   return (
     <Fragment>
-      <p>You clicked {count} this</p>
-      <button onClick={() => setCount(count + 1)}>Ad</button>
-      <p>{lang}</p>
-      <button onClick={changer}>{lang}</button>
+      <h1>Counter {counter}</h1>
+      <Button
+        variant="contained"
+        color="primary"
+        onClick={() => setCounter(counter + 1)}
+      >
+        Add
+      </Button>
+      <Button
+        variant="outlined"
+        color="secondary"
+        onClick={() => setCounter(counter - 1)}
+      >
+        Del
+      </Button>
+      {/* Shunchaki o`zim sinash maqsadida */}
+      <IconButton
+        color="primary"
+        variant="outlined"
+        component="span"
+        aria-label="uploaded picture"
+      ></IconButton>
     </Fragment>
   );
 }

@@ -1,5 +1,7 @@
 {
   "diffEditor.codeLens": true,
-  "files.autoSave": "afterDelay",
-  "editor.cursorStyle": "block"
+  "files.autoSave": "onFocusChange",
+  "editor.cursorStyle": "block",
+  "editor.tabSize": 33,
+  "editor.fontSize": 13
 }
