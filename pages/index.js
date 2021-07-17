@@ -1,52 +1,27 @@
 import React, { useEffect, useState } from "react";
 import { Fragment } from "react";
-import Button from "@material-ui/core/Button";
-import IconButton from "@material-ui/core/IconButton";
-export default function index() {
+export default function Home() {
   useEffect(() => {
     document.title = "This site is fake!!";
   });
-
-  const [counter, setCounter] = useState(0);
-
-  // function increment() {
-  //   {
-  //     setCtounter(() => counter +1)
-  //   }
-  // }
+  let isabookShopOpen = false;
+  let WillIgetNewBook = new Promise((resolve, reject) => {
+    if (isabookShopOpen) {
+      let book = {
+        author: "John Uik",
+        name: "Clear History",
+      };
+      resolve(book);
+    } else {
+      reject(console.log("Errror"));
+      console.log(reject);
+    }
+  });
+  console.log(WillIgetNewBook);
 
   return (
     <Fragment>
-      <h1>Counter {counter}</h1>
-      <Button
-        variant="outlined"
-        color="primary"
-        className="mx-2"
-        onClick={() => setCounter(counter + 1)}
-      >
-        Add
-      </Button>
-      <Button
-        variant="outlined"
-        color="secondary"
-        className="mx-2"
-        onClick={() => setCounter(counter - 1)}
-      >
-        Del
-      </Button>
-      <Button
-        variant="contained"
-        onClick={() => setCounter((pre) => (pre = 1))}
-      >
-        Reset
-      </Button>
-      {/* Shunchaki o`zim sinash maqsadida */}
-      <IconButton
-        color="primary"
-        variant="outlined"
-        component="span"
-        aria-label="uploaded picture"
-      ></IconButton>
+      <ul>{}</ul>
     </Fragment>
   );
 }
