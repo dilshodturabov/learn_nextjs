@@ -1,8 +1,7 @@
-
-
 /* for home page.js file */
 
-.container{
-  width: 70%;
-  margin: 0 auto;
+.forUse {
+  width     : 70% !important;
+  margin    : 0 auto !important;
+  background: #000;
 }
