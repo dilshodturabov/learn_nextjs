@@ -2,6 +2,6 @@
   "diffEditor.codeLens": true,
   "files.autoSave": "onFocusChange",
   "editor.cursorStyle": "block",
-  "editor.tabSize": 33,
+  "editor.tabSize": 2,
   "editor.fontSize": 13
 }
