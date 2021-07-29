@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Head from "next/head";
 // material-ui/core
 import Button from "@material-ui/core/Button";
 import IconButton from "@material-ui/core/IconButton";
@@ -23,14 +24,19 @@ import BotHow from "../public/bot_how.svg";
 export default function index() {
   return (
     <div>
-      <head>
+      <Head>
         <link
           rel="stylesheet"
           href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
           integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
           crossorigin="anonymous"
         />
-      </head>
+        <link
+          rel="shortcut icon"
+          type="image/png"
+          href="https://staging.botcommerce.io/static/img/logo_robot_face_tg.png"
+        ></link>
+      </Head>
       {/* navbar  */}
       <Navbar expand="lg" className="d-flex">
         <Container>
@@ -49,9 +55,10 @@ export default function index() {
               <Nav.Link href="#action3">Nima uchun?</Nav.Link>
               <Nav.Link href="#action4">Documentatsiya</Nav.Link>
               <Button
-                href="#action5"
+                href="https://app.botcommerce.io"
                 variant="contained"
                 className="blue-btn text-light"
+                target="_blank"
               >
                 Kirish
               </Button>
@@ -98,13 +105,15 @@ export default function index() {
       <div className="how-is-it-work">
         <Container>
           <Row className="py-5 d-flex align-items-center">
-            <Col xxl={6} xl={6} lg={6} >
+            <Col xxl={6} xl={6} lg={6}>
               <Image src={BotHow} alt="bot how" />
             </Col>
-            <Col xxl={6} xl={6} lg={6} >
+            <Col xxl={6} xl={6} lg={6}>
               <div className="how-is-right">
-                <h1>Bu qanday ishlaydi?</h1>
-                <p>Faqatgina 3 bosqich ichida:</p>
+                <div className="how-is-it-work-text">
+                  <h1>Bu qanday ishlaydi?</h1>
+                  <p>Faqatgina 3 bosqich ichida:</p>
+                </div>
                 <div className="mb-4 mt-5 d-flex column1">
                   <IconButton className="icon-btn">
                     <i className="fas fa-plus-square "></i>
@@ -119,7 +128,7 @@ export default function index() {
                 </div>
                 <div className="mb-4 d-flex column2">
                   <IconButton className="icon-btn">
-                    <i class="fas fa-shopping-bag"></i>
+                    <i className="fas fa-shopping-bag"></i>
                   </IconButton>
                   <div>
                     <h4>O`z do`koningni to`ldir</h4>
@@ -131,21 +140,84 @@ export default function index() {
                 </div>
                 <div className="d-flex column3">
                   <IconButton className="icon-btn">
-                     <i class="fas fa-heart"></i>
+                    <i className="fas fa-heart"></i>
                   </IconButton>
                   <div>
                     <h4>Buyurtma olishni boshla</h4>
                     <p>
                       Buyurtmalarni o`z mijozinga taqdim et
-                   <br /> va buyurtmalarni <br /> va buyurtmalarni Telegram
-                     da qayta ishlashga imkon
-                      yarat
+                      <br /> va buyurtmalarni <br /> va buyurtmalarni Telegram
+                      da qayta ishlashga imkon yarat
                     </p>
                   </div>
                 </div>
               </div>
             </Col>
           </Row>
+        </Container>
+      </div>
+      {/* how does look like */}
+      <div className="look-like">
+        <Container>
+          <div className="look-like-text text-center ">
+            <h1>Telegram do'kon qanday ko'rinishga ega?</h1>
+            <p>
+              Asosiy menyu, kategoriyalar, mahsulotlar, savatcha, buyurtmani
+              rasmiylashtirish jarayoni
+            </p>
+            <div className="text-center mt-5">
+              <Row className="d-flex align-items-center">
+                <Col xxl={4} xl={4}>
+                  <div className="col mb-5">
+                    <IconButton className="icon-btn">
+                      <i className="fas fa-home"></i>
+                    </IconButton>
+                    <h4>Asosiy menyu</h4>
+                    <p>
+                      Buyurtma berish knopkasi(ichida kategoriyalar va
+                      mahsulotlar), Sozlamalar, Biz haqimizda, Fikr qoldirish va
+                      Mening buyurtmalarim
+                    </p>
+                  </div>
+                  <div className="col ">
+                    <IconButton className="icon-btn">
+                      <i className="fas fa-shopping-bag"></i>
+                    </IconButton>
+                    <h4>Kategoriyalar va mahsulotlar</h4>
+                    <p>
+                      Kategoriyalar ichida boshqa kategoriyalar yoki mahsulotlar
+                      bo'lishi mumkin, mahsulotlarning tavsifi, rasmi va narxi
+                      mavjud
+                    </p>
+                  </div>
+                </Col>
+                <Col xxl={4} xl={4} className="col"></Col>
+                <Col xxl={4} xl={4} className="col">
+                  <div className="col mb-5">
+                    <IconButton className="icon-btn">
+                      <i class="fas fa-shopping-cart"></i>
+                    </IconButton>
+                    <h4>Rasmiylashtirish jarayoni</h4>
+                    <p>
+                      Xaridor to'lov turini tanlashi mumkin, yetkazib berish
+                      turini(yetkazish yoki olib ketish), adres jo'natishi
+                      mumkin(tekst yoki lokatsiya)
+                    </p>
+                  </div>
+                  <div className="col ">
+                    <IconButton className="icon-btn">
+                      <i class="fas fa-cog"></i>
+                    </IconButton>
+                    <h4>Hammasi Boshqaruv panelida</h4>
+                    <p>
+                      Do'konning barcha sozlamalari Boshqaruv Paneli orqali
+                      sozlanadi
+                    </p>
+                  </div>
+                </Col>
+              </Row>
+            </div>
+          </div>
         </Container>
       </div>
     </div>
