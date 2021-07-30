@@ -14,6 +14,8 @@ import {
   Container,
   Row,
   Col,
+  Carousel,
+  Caption,
 } from "react-bootstrap";
 // fontawesome
 
@@ -21,6 +23,7 @@ import {
 import Logo from "../public/logo.svg";
 import BotMain from "../public/bot_main.svg";
 import BotHow from "../public/bot_how.svg";
+import Phone from "../public/1hq.jpg";
 export default function index() {
   return (
     <div>
@@ -109,12 +112,12 @@ export default function index() {
               <Image src={BotHow} alt="bot how" />
             </Col>
             <Col xxl={6} xl={6} lg={6}>
-              <div className="how-is-right">
+              <div className="how-is-right ml-4">
                 <div className="how-is-it-work-text">
                   <h1>Bu qanday ishlaydi?</h1>
                   <p>Faqatgina 3 bosqich ichida:</p>
                 </div>
-                <div className="mb-4 mt-5 d-flex column1">
+                <div className="mb-5 mt-5 d-flex column1">
                   <IconButton className="icon-btn">
                     <i className="fas fa-plus-square "></i>
                   </IconButton>
@@ -126,7 +129,7 @@ export default function index() {
                     </p>
                   </div>
                 </div>
-                <div className="mb-4 d-flex column2">
+                <div className="mb-5 d-flex column2">
                   <IconButton className="icon-btn">
                     <i className="fas fa-shopping-bag"></i>
                   </IconButton>
@@ -157,7 +160,7 @@ export default function index() {
         </Container>
       </div>
       {/* how does look like */}
-      <div className="look-like">
+      <div className="look-like pb-5">
         <Container>
           <div className="look-like-text text-center ">
             <h1>Telegram do'kon qanday ko'rinishga ega?</h1>
@@ -168,7 +171,7 @@ export default function index() {
             <div className="text-center mt-5">
               <Row className="d-flex align-items-center">
                 <Col xxl={4} xl={4}>
-                  <div className="col mb-5">
+                  <div className="cool mb-5">
                     <IconButton className="icon-btn">
                       <i className="fas fa-home"></i>
                     </IconButton>
@@ -179,7 +182,7 @@ export default function index() {
                       Mening buyurtmalarim
                     </p>
                   </div>
-                  <div className="col ">
+                  <div className="cool ">
                     <IconButton className="icon-btn">
                       <i className="fas fa-shopping-bag"></i>
                     </IconButton>
@@ -191,11 +194,26 @@ export default function index() {
                     </p>
                   </div>
                 </Col>
-                <Col xxl={4} xl={4} className="col"></Col>
                 <Col xxl={4} xl={4} className="col">
-                  <div className="col mb-5">
+                  <Carousel>
+                    <Carousel.Item interval={1000}>
+                      <h1>First slider</h1>
+                      <Image src={Phone} alt="" />
+                    </Carousel.Item>
+                    <Carousel.Item interval={500}>
+                      <h1> second slider</h1>
+                      <Image src={Phone} alt="" />
+                    </Carousel.Item>
+                    <Carousel.Item>
+                      <h1>four slider</h1>
+                      <Image src={Phone} alt="" style={{ maxHeight: "50px" }} />
+                    </Carousel.Item>
+                  </Carousel>
+                </Col>
+                <Col xxl={4} xl={4} className="col">
+                  <div className="cool mb-5">
                     <IconButton className="icon-btn">
-                      <i class="fas fa-shopping-cart"></i>
+                      <i className="fas fa-shopping-cart"></i>
                     </IconButton>
                     <h4>Rasmiylashtirish jarayoni</h4>
                     <p>
@@ -204,9 +222,9 @@ export default function index() {
                       mumkin(tekst yoki lokatsiya)
                     </p>
                   </div>
-                  <div className="col ">
+                  <div className="cool ">
                     <IconButton className="icon-btn">
-                      <i class="fas fa-cog"></i>
+                      <i className="fas fa-cog"></i>
                     </IconButton>
                     <h4>Hammasi Boshqaruv panelida</h4>
                     <p>
@@ -217,6 +235,66 @@ export default function index() {
                 </Col>
               </Row>
             </div>
+          </div>
+        </Container>
+      </div>
+
+      {/* Pricing */}
+      <div className="pricing py-5">
+        <Container>
+          <div className="text-center price-text">
+            <h1>Narxlar</h1>
+            <p>
+              Birinchi oy <strong>bepul</strong>, barcha funksiyalardan
+              foydalanish imkoniyati mavjud.
+              <br />
+              Abonent to'lovi ikkinchi oydan boshlab to'lanishi kerak.
+            </p>
+          </div>
+          <div className="card">
+            <Row>
+              <Col xxl={6} xl={6}>
+                <div className="left-card">
+                  <ul>
+                    <li>
+                      <i class="fas fa-check-circle fa-2x"></i>
+                      Do`konning panel boshqaruvi
+                    </li>
+                    <li>
+                      <i class="fas fa-check-circle fa-2x"></i>
+                      Mahsulotlar, buyurtmalar, mijozlar
+                    </li>
+                    <li>
+                      <i class="fas fa-check-circle fa-2x"></i>
+                      Aqlli analitika
+                    </li>
+                    <li>
+                      <i class="fas fa-check-circle fa-2x"></i>
+                      Aqlli push kompaniyasi
+                    </li>
+                    <li>
+                      <i class="fas fa-check-circle fa-2x"></i>
+                      To'lov sistemalari
+                    </li>
+                  </ul>
+                </div>
+              </Col>
+              <Col xxl={6} xl={6}>
+                <div className="right-card">
+                  <h1>
+                    $6.9<span>/oy</span>
+                  </h1>
+                  <p>ikkinchi oydan boshlab</p>
+                  <Button
+                    variant="contained"
+                    href="https://app.botcommerce.io"
+                    className="fluid"
+                  >
+                    Ulanish
+                  </Button>
+                </div>
+              </Col>
+            </Row>
           </div>
         </Container>
       </div>

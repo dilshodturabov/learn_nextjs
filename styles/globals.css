@@ -194,7 +194,7 @@ h1, h2, h3, h4, h5, h6 {
   background: rgba(69, 180, 220, 0.32);
 }
 
-.look-like .look-like-text .row .col:hover .icon-btn {
+.look-like .look-like-text .row .cool:hover .icon-btn {
   transform: translateY(-5px) !important;
 }
 
@@ -207,12 +207,108 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.125;
 }
 
-.look-like .look-like-text .row .col p{
-  font-weight:400;
-  line-height:1.5;
-  color:#757575;
-  font-size:0.8rem;
+.look-like .look-like-text .row .col p {
+  font-weight: 400;
+  line-height: 1.5;
+  color: #757575;
+  font-size: 0.8rem;
+}
 
+/* Pricing */
+
+.pricing {
+  background-color: #F8F9FA;
+}
+
+.pricing .primary-text h1 {
+  margin-bottom: 1.5rem;
+  color: #363636;
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.125;
+}
+
+.pricing .container {
+  padding: 0 150px;
+}
+
+.pricing .primary-text p {
+  color: #757575;
+  font-size: 1rem;
+  line-height: 144.9%;
+}
+
+.pricing .card {
+  background-color: #fff;
+  border-radius: 30px;
+  box-shadow: 0px 0px 15px rgba(226, 226, 226, 0.527);
+  padding: 12px 15px;
+  border: 0;
+}
+
+.pricing .card .row {
+  display: flex;
+  align-items: center;
+}
+
+.pricing .card .left-card ul li {
+  display: flex;
+  align-items: center;
+  color: #4a4a4a;
+  font-size: 1em;
+  font-weight: 400;
+  line-height: 1.5;
+  margin: 20px 0;
+}
+
+.pricing .card .left-card ul li i {
+  margin-right: 15px;
+  color: rgba(42, 141, 38, 0.774);
+}
+
+.pricing .card .right-card {
+  background-color: #0B6889;
+  border-radius: 30px;
+  height: 100%;
+  text-align: center;
+  padding: 50px 0;
+}
+
+.pricing .card .right-card h1 {
+  color: #fff;
+  font-size: 3.5rem;
+  font-weight: bold;
+  line-height: 1.5;
+}
+
+.pricing .card .right-card h1 span {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.pricing .card .right-card p {
+  font-size: 1em;
+  font-weight: 400;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.pricing .card .right-card a {
+  background-color: #fff;
+  font-size: 1rem;
+  color: #0B6889;
+  border: 1px solid transparent;
+  font-weight: 400;
+  width: 70%;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+.pricing .card .right-card a:hover {
+  background-color: #065a79;
+  color: #fff;
+  border:1px solid #fff;
+  box-shadow: none;
 }
 
 /* for mobile device */
