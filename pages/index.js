@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import { useRouter } from "next/router";
 import Head from "next/head";
 // material-ui/core
 import Button from "@material-ui/core/Button";
@@ -24,7 +25,10 @@ import Logo from "../public/logo.svg";
 import BotMain from "../public/bot_main.svg";
 import BotHow from "../public/bot_how.svg";
 import Phone from "../public/1hq.jpg";
+import WhiteLogo from "../public/logo_white.svg";
 export default function index() {
+  let router = useRouter();
+
   return (
     <div>
       <Head>
@@ -53,14 +57,32 @@ export default function index() {
               style={{ maxHeight: "100px" }}
               navbarScroll
             >
-              <Nav.Link href="#action1">Asosiy</Nav.Link>
-              <Nav.Link href="#action2">Narxlar</Nav.Link>
-              <Nav.Link href="#action3">Nima uchun?</Nav.Link>
+              <Nav.Link href="#action1">
+                {router.locale == "uz"
+                  ? "Asosiy"
+                  : router.locale == "en"
+                  ? "Home"
+                  : "Главная "}
+              </Nav.Link>
+              <Nav.Link href="#action2">
+                {router.locale == "uz"
+                  ? "Narxlar"
+                  : router.locale == "en"
+                  ? "Prices"
+                  : "Цены"}
+              </Nav.Link>
+              <Nav.Link href="#action3">
+                {router.locale == "uz"
+                  ? "Nima uchun?"
+                  : router.locale == "en"
+                  ? "What for?"
+                  : "Зачем?"}
+              </Nav.Link>
               <Nav.Link href="#action4">Documentatsiya</Nav.Link>
               <Button
                 href="https://app.botcommerce.io"
                 variant="contained"
-                className="blue-btn text-light"
+                className="primary-btn text-light"
                 target="_blank"
               >
                 Kirish
@@ -68,9 +90,9 @@ export default function index() {
               <NavDropdown title="Tillar" id="navbarScrollingDropdown">
                 <NavDropdown.Item href="#action3">Rus</NavDropdown.Item>
                 <NavDropdown.Divider />
-                <NavDropdown.Item href="#action4">Eng</NavDropdown.Item>
+                <NavDropdown.Item href="en">Eng</NavDropdown.Item>
                 <NavDropdown.Divider />
-                <NavDropdown.Item href="#action5">Uzb</NavDropdown.Item>
+                <NavDropdown.Item href="uz">Uzb</NavDropdown.Item>
               </NavDropdown>
             </Nav>
           </Navbar.Collapse>
@@ -81,21 +103,51 @@ export default function index() {
         <Container>
           <Row className="d-flex align-items-center">
             <Col xxl={6} xl={6} lg={6} className="align-items-center">
-              <h1>
-                Sizning <span className="primary-text">do`koningiz</span>
-                <br /> 5 daqiqa ichida telegramda
-              </h1>
-              <p>
-                Mukammal do`kon, to`lov sistemalari, yetkazib berish xizmatlari
-                hamda qulay panel boshqaruvi va ko`plab imkoniyatlar
-              </p>
+              {router.locale == "uz" ? (
+                <h1>
+                  Sizning <span className="primary-text">do`koningiz</span>
+                  <br /> 5 daqiqa ichida telegramda
+                </h1>
+              ) : router.locale == "en" ? (
+                <h1>
+                  Your <span>shop</span> inside telegram in 5 minutes
+                </h1>
+              ) : (
+                <h1>
+                  Твой <span>магазин</span> в Телеграм за 5 минут
+                </h1>
+              )}
+
+              {router.locale == "uz" ? (
+                <p>
+                  Mukammal do`kon, to`lov sistemalari, yetkazib berish
+                  xizmatlari hamda qulay panel boshqaruvi va ko`plab
+                  imkoniyatlar
+                </p>
+              ) : router.locale == "en" ? (
+                <p>
+                  A complete shop, with payment systems, delivery services and
+                  convenient control panel with built-in CRM and Analytics.
+                </p>
+              ) : (
+                <p>
+                  Полноценный магазин, с платежными системами, доставочными
+                  службами и удобной панелью управления с встроенной CRM и
+                  Аналитикой.
+                </p>
+              )}
+
               <Button
                 size="large"
-                className="blue-btn text-light"
+                className="primary-btn text-light"
                 href="https://app.botcommerce.io"
                 target="_blame"
               >
-                Do`kon yaratish
+                {router.locale == "uz"
+                  ? "Do`kon yaratish"
+                  : router.locale == "en"
+                  ? "Create shop"
+                  : "Создать"}
               </Button>
             </Col>
             <Col xxl={6} xl={6} lg={6}>
@@ -170,7 +222,7 @@ export default function index() {
             </p>
             <div className="text-center mt-5">
               <Row className="d-flex align-items-center">
-                <Col xxl={4} xl={4}>
+                <Col xxl={4} xl={4} lg={4} xs={12}>
                   <div className="cool mb-5">
                     <IconButton className="icon-btn">
                       <i className="fas fa-home"></i>
@@ -194,7 +246,7 @@ export default function index() {
                     </p>
                   </div>
                 </Col>
-                <Col xxl={4} xl={4} className="col">
+                <Col xxl={4} xl={4} lg={4} xs={12} className="col">
                   <Carousel>
                     <Carousel.Item interval={1000}>
                       <h1>First slider</h1>
@@ -210,7 +262,7 @@ export default function index() {
                     </Carousel.Item>
                   </Carousel>
                 </Col>
-                <Col xxl={4} xl={4} className="col">
+                <Col xxl={4} xl={4} lg={4} xs={12} className="col">
                   <div className="cool mb-5">
                     <IconButton className="icon-btn">
                       <i className="fas fa-shopping-cart"></i>
@@ -253,33 +305,33 @@ export default function index() {
           </div>
           <div className="card">
             <Row>
-              <Col xxl={6} xl={6}>
+              <Col xxl={6} xl={6} lg={6}>
                 <div className="left-card">
                   <ul>
                     <li>
-                      <i class="fas fa-check-circle fa-2x"></i>
+                      <i className="fas fa-check-circle fa-2x"></i>
                       Do`konning panel boshqaruvi
                     </li>
                     <li>
-                      <i class="fas fa-check-circle fa-2x"></i>
+                      <i className="fas fa-check-circle fa-2x"></i>
                       Mahsulotlar, buyurtmalar, mijozlar
                     </li>
                     <li>
-                      <i class="fas fa-check-circle fa-2x"></i>
+                      <i className="fas fa-check-circle fa-2x"></i>
                       Aqlli analitika
                     </li>
                     <li>
-                      <i class="fas fa-check-circle fa-2x"></i>
+                      <i className="fas fa-check-circle fa-2x"></i>
                       Aqlli push kompaniyasi
                     </li>
                     <li>
-                      <i class="fas fa-check-circle fa-2x"></i>
+                      <i className="fas fa-check-circle fa-2x"></i>
                       To'lov sistemalari
                     </li>
                   </ul>
                 </div>
               </Col>
-              <Col xxl={6} xl={6}>
+              <Col xxl={6} xl={6} lg={6}>
                 <div className="right-card">
                   <h1>
                     $6.9<span>/oy</span>
@@ -298,6 +350,114 @@ export default function index() {
           </div>
         </Container>
       </div>
+
+      {/* why choose us */}
+      <div className="why-choose-us">
+        <Container>
+          <div className="why-text text-center">
+            <h1>Nima uchun aynan biz?</h1>
+            <p>
+              Bizda do'kon yaratib, biznesingizni
+              <br /> yangi darajaga olib chiqing va savdoni oshiring.
+            </p>
+          </div>
+          <div className="cards text-center">
+            <Row>
+              <Col xxl={4} xl={4} xs={12}>
+                <div className="box">
+                  <IconButton className="blue-btn">
+                    {/* <i class="fas fa-comment-alt"></i> */}
+                  </IconButton>
+                  <h2>Doimiy yangilanish va yordam</h2>
+                  <p>
+                    Biz doim sistemamizni monitoring qilib
+                    <br /> turamiz, yangiliklar kiritamiz va yordam beramiz
+                  </p>
+                </div>
+              </Col>
+              <Col xxl={4} xl={4} xs={12}>
+                <div className="box">
+                  <IconButton className="blue-btn">
+                    {/* <i class="fas fa-comment-alt"></i> */}
+                  </IconButton>
+                  <h2>Qulay va oson ishlatiliashi</h2>
+                  <p>
+                    Juda zo`r va
+                    <br /> qulay boshqarish paneli
+                  </p>
+                </div>
+              </Col>
+              <Col xxl={4} xl={4} xs={12}>
+                <div className="box">
+                  <IconButton className="blue-btn">{/*  */}</IconButton>
+                  <h2>Arzonligi</h2>
+                  <p>
+                    Faqatgina qo`shimcha funksiyalar uchun to`lang,
+                    <br /> o`zingizga ijozat bergan holatda
+                  </p>
+                </div>
+              </Col>
+            </Row>
+          </div>
+        </Container>
+      </div>
+      {/* stil question */}
+      <div className="still-have-question">
+        <Container>
+          <Row className="d-flex align-items-center">
+            <Col xxl={6} xl={6} lg={6} md={6} sm={12}>
+              <h4>Hali ham savolingiz bormi?</h4>
+            </Col>
+            <Col xxl={6} xl={6} lg={6} md={6} sm={12}>
+              <h4>
+                <a href="tel:+998993698462">+998(91)408-66-08</a> online yozing
+                <a href="https://t.me/botcommerceio"> @botcommerceio</a>
+              </h4>
+            </Col>
+          </Row>
+        </Container>
+      </div>
+      {/* bottom navbar */}
+      <div className="bottom-nav">
+        <Container>
+          <Row className="d-flex align-items-center justify-space-between">
+            <Col xxl={6} xl={6} lg={4} md={4}>
+              <a href="#">
+                <Image href="#" src={WhiteLogo} alt="logo" />
+              </a>
+            </Col>
+            <Col xxl={6} xl={6} lg={8} md={8}>
+              <ul>
+                <li>
+                  <a href="#home">Asosiy</a>
+                </li>
+                <li>
+                  <a href="#How-it-work">Bu qanday ishlaydi</a>
+                </li>
+                <li>
+                  <a href="#pricing">Narxlar</a>
+                </li>
+                <li>
+                  <Button variant="outlined" href="https://app.botcommerce.io">
+                    Do`kon yaratish
+                  </Button>
+                </li>
+              </ul>
+            </Col>
+          </Row>
+        </Container>
+      </div>
+      <footer>
+        <Container>
+          <div className="footer">
+            <h3>© August 02, 2021 botcommerce.io</h3>
+            <h3>
+              developed by
+              <a href="http://mondaylabs.ru/portfolio/botcommerce">Monday</a>
+            </h3>
+          </div>
+        </Container>
+      </footer>
     </div>
   );
 }

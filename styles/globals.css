@@ -3,7 +3,7 @@
 html, body {
   padding: 0;
   margin: 0;
-  font-family: 'Century Gothic', sans-serif;
+  font-family: "Century Gothic", sans-serif;
 }
 
 a {
@@ -33,13 +33,16 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .blue-btn {
-  background-color: #45B4DC !important;
+  background-color: rgba(69, 180, 220, 0.32) !important;
 }
 
 .primary-text {
-  color: #45B4DC;
+  color: #45b4dc;
 }
 
+.primary-btn{
+  background-color: #45B4DC !important;
+}
 /* navbar  */
 
 .navbar {
@@ -67,6 +70,10 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 24px;
 }
 
+.shop-inside h1 span {
+  color: #45B4DC;
+}
+
 .shop-inside p {
   color: rgba(0, 0, 0, 0.9);
   margin: 16px 0 24px 0;
@@ -76,7 +83,7 @@ h1, h2, h3, h4, h5, h6 {
 /* how-is-it-work */
 
 .how-is-it-work {
-  background-color: #F8F9FA;
+  background-color: #f8f9fa;
   margin-top: 50px;
   flex-direction: row !important;
 }
@@ -128,9 +135,9 @@ h1, h2, h3, h4, h5, h6 {
 .how-is-right p {
   color: #757575;
   line-height: 144.9%;
-  margin-top: .5em;
+  margin-top: 0.5em;
   font-weight: 400;
-  font-size: .95rem;
+  font-size: 0.95rem;
 }
 
 .how-is-right p:first-child {
@@ -138,25 +145,25 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .how-is-right .column2 .icon-btn {
-  background-color: #E4FFEE;
-  color: #449A63;
+  background-color: #e4ffee;
+  color: #449a63;
 }
 
 .how-is-right .column2 .icon-btn:hover {
-  background-color: #E4FFEE;
+  background-color: #e4ffee;
 }
 
 .how-is-right .column2 h4 {
-  color: #449A63;
+  color: #449a63;
 }
 
 .how-is-right .column3 .icon-btn {
-  background-color: #C3E7F4;
-  color: #0B6889;
+  background-color: #c3e7f4;
+  color: #0b6889;
 }
 
 .how-is-right .column3 h4 {
-  color: #0B6889;
+  color: #0b6889;
 }
 
 /*how does look like telegram channel */
@@ -185,7 +192,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .look-like .icon-btn {
   background: rgba(69, 180, 220, 0.32);
-  color: #0B6889;
+  color: #0b6889;
   transition: 300ms;
   margin: 0;
 }
@@ -217,7 +224,7 @@ h1, h2, h3, h4, h5, h6 {
 /* Pricing */
 
 .pricing {
-  background-color: #F8F9FA;
+  background-color: #f8f9fa;
 }
 
 .pricing .primary-text h1 {
@@ -267,7 +274,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .pricing .card .right-card {
-  background-color: #0B6889;
+  background-color: #0b6889;
   border-radius: 30px;
   height: 100%;
   text-align: center;
@@ -296,7 +303,7 @@ h1, h2, h3, h4, h5, h6 {
 .pricing .card .right-card a {
   background-color: #fff;
   font-size: 1rem;
-  color: #0B6889;
+  color: #0b6889;
   border: 1px solid transparent;
   font-weight: 400;
   width: 70%;
@@ -307,13 +314,169 @@ h1, h2, h3, h4, h5, h6 {
 .pricing .card .right-card a:hover {
   background-color: #065a79;
   color: #fff;
-  border:1px solid #fff;
+  border: 1px solid #fff;
   box-shadow: none;
+}
+
+/* why choose us */
+
+.why-choose-us {
+  padding: 96px 0;
+}
+
+.why-choose-us .why-text h1 {
+  color: #363636;
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.125;
+  margin-bottom: 1.5rem;
+}
+
+.why-choose-us .why-text p {
+  color: #757575;
+  font-size: 1rem;
+  line-height: 144.9%;
+}
+
+.why-choose-us .cards {
+  margin-top: 48px;
+}
+
+.why-choose-us .cards .blue-btn {
+  padding: 2.2rem;
+  color: #0b6889;
+}
+
+.why-choose-us .cards h2 {
+  margin-top: 1.2rem;
+  font-size: 1.25em;
+  margin-bottom: 0.8em;
+  color: #363636;
+  font-weight: 600;
+  line-height: 1.125;
+}
+
+.why-choose-us .cards p {
+  color: #757575;
+  font-size: 0.8rem;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.why-choose-us .cards .box {
+  padding: 1.75rem 0;
+  border-radius: 0.9rem;
+  box-shadow: 0 0.5px 13px rgba(233, 233, 233, 0.589);
+  border: none;
+}
+
+.why-choose-us .cards .box:hover {
+  transition: 0.5s;
+  transform: translateY(-5px);
+  background-color: #45b4dc !important;
+  box-shadow: 0 0.5px 13px #70d4f8c4;
+}
+
+.why-choose-us .cards .box:hover h2, .box:hover i {
+  color: #fff;
+}
+
+.why-choose-us .cards .box:hover .blue-btn {
+  background-color: #3da2c7 !important;
+}
+
+.why-choose-us .cards .box:hover p {
+  color: #bbedff;
+}
+
+/* still-have-question */
+
+.still-have-question {
+  background-color: #F8F9FA;
+  padding: 48px 0;
+}
+
+.still-have-question h4 {
+  font-weight: 600;
+  color: #2B2B2B;
+  line-height: 119.7%;
+  font-size: 1.25rem;
+  margin: 0;
+}
+
+.still-have-question h4 a {
+  text-decoration: none;
+}
+
+/* bottom nav */
+
+.bottom-nav {
+  background-color: #0B6889;
+  color: #fff;
+  padding: 48px 0;
+}
+
+.bottom-nav ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.bottom-nav ul li {
+  margin-left: 10px;
+}
+
+.bottom-nav ul li button {
+  background-color: #0B6889;
+  color: #fff;
+}
+
+.bottom-nav ul li .MuiButton-outlined {
+  border: 2px solid #fff;
+}
+
+.bottom-nav ul li a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.bottom-nav ul li button:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+/* footer */
+
+footer {
+  background-color: #233D48;
+  color: rgba(255, 255, 255, .7);
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 0;
+}
+
+.footer h3 {
+  font-size: 1em;
+  font-weight: 400;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, .7);
+  margin: 0;
+}
+
+.footer h3 a {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  margin-left: 5px;
 }
 
 /* for mobile device */
 
-@media(max-width:375px) {
+@media (max-width: 375px) {
   /* navbar */
   .navbar-brand {
     width: 60%;
@@ -333,11 +496,79 @@ h1, h2, h3, h4, h5, h6 {
   .how-is-it-work .how-is-right .how-is-it-work-text {
     text-align: center;
   }
+  /* pricing  */
+  .pricing .container {
+    padding: 0 5%;
+  }
+  /* why choose */
+  .why-choose-us {
+    padding-bottom: 20px;
+  }
+  .why-choose-us .row {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+  }
+  /* still  have a question */
+  .still-have-question h4 {
+    line-height: 40px;
+    text-align: center;
+  }
+  /* bottom nav */
+  .bottom-nav ul {
+    display: flex;
+    line-height: 50px;
+    justify-content: space-around;
+    font-size: 13px;
+    padding: 0;
+  }
+  .bottom-nav ul li {
+    margin: 0;
+    padding: 0;
+  }
+  .bottom-nav ul li a {
+    font-size: 10px;
+  }
+}
+
+@media(min-width:376px) and (max-width: 425px) {
+  /* pricing  */
+  .pricing .container {
+    padding: 0 5%;
+  }
+  /* why choose */
+  .why-choose-us .row {
+    margin-top: 3rem;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+  }
+  /* still have question */
+  .still-have-question h4 {
+    /* font-size: 13px; */
+    text-align: center;
+    line-height: 45px;
+  }
+  /* bottom nav */
+  .bottom-nav ul {
+    display: flex;
+    line-height: 50px;
+    justify-content: space-around;
+    font-size: 15px;
+    padding: 0;
+  }
+  .bottom-nav ul li {
+    margin: 0;
+  }
+  /* footer */
+  footer .footer h3{
+    font-size: 15px;
+  }
 }
 
 /* for tablet device */
 
-@media(min-width: 376px) and (max-width:768px) {
+@media (min-width: 426px) and (max-width: 768px) {
   /* shop inside */
   .shop-inside .row {
     flex-direction: column-reverse;
@@ -353,11 +584,40 @@ h1, h2, h3, h4, h5, h6 {
   .how-is-it-work .how-is-right .how-is-it-work-text {
     text-align: center;
   }
+  /* pricing  */
+  .pricing .container {
+    padding: 0 5%;
+  }
+  /* why choose us */
+  .why-choose-us .container {
+    overflow-x: hidden;
+  }
+  .why-choose-us .row {
+    margin-top: 3rem;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+  }
+  .why-choose-us .row .col {
+    width: 100%;
+  }
+  /* still have a question */
+  .still-have-question .row .col-md-6:last-child{
+    text-align: right;
+  }
+  /* bottom nav */
+  .bottom-nav ul {
+    display: block;
+    line-height: 50px;
+    float: right;
+  }
+  /* footer */
 }
 
 /* for labtop device */
 
-@media(min-width:769px) and (max-width:1024px) {
+@media (min-width: 769px) and (max-width: 1024px) {
+  /* shop inside */
   .shop-inside .row .col {
     width: 50% !important;
   }
@@ -366,5 +626,14 @@ h1, h2, h3, h4, h5, h6 {
   }
   .shop-inside p {
     font-size: 1rem;
+  }
+/* still have aquestion */
+  .still-have-question .row .col-lg-6:last-child{
+    text-align: right;
+  }
+
+  /* bottom nav */
+  .bottom-nav ul {
+    display: flex;
   }
 }

@@ -2,6 +2,13 @@
   "diffEditor.codeLens": true,
   "files.autoSave": "onFocusChange",
   "editor.cursorStyle": "block",
-  "editor.tabSize": 2,
-  "editor.fontSize": 13
+  "editor.tabSize": 1,
+  "editor.fontSize": 13,
+  "workbench.sash.size": 1,
+  "workbench.preferredLightColorTheme": "Default Dark+",
+  "debug.console.fontSize": 10,
+  "debug.console.fontFamily": "new-times",
+  "terminal.integrated.fontFamily": "monospace",
+  "terminal.integrated.fontSize": 13,
+  "editor.renderWhitespace": "none"
 }
