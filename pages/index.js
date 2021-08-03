@@ -29,6 +29,44 @@ import WhiteLogo from "../public/logo_white.svg";
 export default function index() {
   let router = useRouter();
 
+  const card = [
+    {
+      id: 1,
+      icon: "",
+      title_en: "Stable updates and support",
+      title_ru: "Стабильные обновления и поддержка",
+      title_uz: "Doimiy yangilanish va yordam",
+      body_en: "We always monitor our system, make updates and support",
+      body_uz:
+        "Biz doim sistemamizni monitoring qilib turamiz, yangiliklar kiritamiz va yordam beramiz",
+      body_ru:
+        "Мы постоянно следим за нашей системой, делаем обновления и оказываем поддержку",
+    },
+    {
+      id: 2,
+      icon: "",
+      title_ru: "Простота использования",
+      title_uz: "Qulay va oson ishlatiliashi",
+      title_en: "Ease of use",
+      body_uz:
+        "Biz doim sistemamizni monitoring qilib turamiz, yangiliklar kiritamiz va yordam beramiz",
+      body_ru: "Супер простая и интуитивная панель управления",
+      body_en: "Super easy and intuitive control panel",
+    },
+    {
+      id: 3,
+      icon: "",
+      title_ru: "Доступность",
+      title_uz: "Qulay va oson ishlatiliashi",
+      title_en: "Availability",
+      body_uz:
+        "Biz doim sistemamizni monitoring qilib turamiz, yangiliklar kiritamiz va yordam beramiz",
+      body_ru:
+        "Платите фиксированную стоимость, не зависящую от вашего оборота.",
+      body_en: "Pay only for additional features if you can afford it",
+    },
+  ];
+
   return (
     <div>
       <Head>
@@ -47,7 +85,7 @@ export default function index() {
       {/* navbar  */}
       <Navbar expand="lg" className="d-flex">
         <Container>
-          <Navbar.Brand href="#">
+          <Navbar.Brand href="/">
             <Image src={Logo} alt="logo" />
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="navbarScroll" />
@@ -57,42 +95,61 @@ export default function index() {
               style={{ maxHeight: "100px" }}
               navbarScroll
             >
-              <Nav.Link href="#action1">
+              <Nav.Link href="#">
                 {router.locale == "uz"
                   ? "Asosiy"
                   : router.locale == "en"
                   ? "Home"
                   : "Главная "}
               </Nav.Link>
-              <Nav.Link href="#action2">
+              <Nav.Link href="#">
                 {router.locale == "uz"
                   ? "Narxlar"
                   : router.locale == "en"
                   ? "Prices"
                   : "Цены"}
               </Nav.Link>
-              <Nav.Link href="#action3">
+              <Nav.Link href="#">
                 {router.locale == "uz"
                   ? "Nima uchun?"
                   : router.locale == "en"
                   ? "What for?"
                   : "Зачем?"}
               </Nav.Link>
-              <Nav.Link href="#action4">Documentatsiya</Nav.Link>
+              <Nav.Link href="#action4">
+                {router.locale == "uz"
+                  ? "Dokumentatsiya"
+                  : router.locale == "en"
+                  ? "Documentation"
+                  : "Документация"}
+              </Nav.Link>
               <Button
                 href="https://app.botcommerce.io"
                 variant="contained"
                 className="primary-btn text-light"
                 target="_blank"
               >
-                Kirish
+                {router.locale == "uz"
+                  ? "Kirish"
+                  : router.locale == "en"
+                  ? "Enter"
+                  : "Войти"}
               </Button>
-              <NavDropdown title="Tillar" id="navbarScrollingDropdown">
-                <NavDropdown.Item href="#action3">Rus</NavDropdown.Item>
+              <NavDropdown
+                title={
+                  router.locale == "uz"
+                    ? "Tillar"
+                    : router.locale == "en"
+                    ? "Language"
+                    : "Языки"
+                }
+                id="navbarScrollingDropdown"
+              >
+                <NavDropdown.Item href="/ru">Rus</NavDropdown.Item>
                 <NavDropdown.Divider />
-                <NavDropdown.Item href="en">Eng</NavDropdown.Item>
+                <NavDropdown.Item href="/en">Eng</NavDropdown.Item>
                 <NavDropdown.Divider />
-                <NavDropdown.Item href="uz">Uzb</NavDropdown.Item>
+                <NavDropdown.Item href="/uz">Uzb</NavDropdown.Item>
               </NavDropdown>
             </Nav>
           </Navbar.Collapse>
@@ -166,18 +223,39 @@ export default function index() {
             <Col xxl={6} xl={6} lg={6}>
               <div className="how-is-right ml-4">
                 <div className="how-is-it-work-text">
-                  <h1>Bu qanday ishlaydi?</h1>
-                  <p>Faqatgina 3 bosqich ichida:</p>
+                  <h1>
+                    {router.locale == "uz"
+                      ? "Bu qanday ishlaydi?"
+                      : router.locale == "en"
+                      ? "How it works"
+                      : "Как это работает"}
+                  </h1>
+                  <p>
+                    {router.locale == "uz"
+                      ? "Faqatgina 3 bosqich ichida:"
+                      : router.locale == "en"
+                      ? "In just 3 easy steps:"
+                      : "Всего-то 3 простых шага:"}
+                  </p>
                 </div>
                 <div className="mb-5 mt-5 d-flex column1">
                   <IconButton className="icon-btn">
                     <i className="fas fa-plus-square "></i>
                   </IconButton>
                   <div>
-                    <h4>Kirish botCommerce</h4>
+                    <h4>
+                      {router.locale == "uz"
+                        ? "Kirish botCommerce"
+                        : router.locale == "en"
+                        ? "Enter botCommerce"
+                        : "Войди в botCommerce"}
+                    </h4>
                     <p>
-                      O'zingning elektron pochtang orqali
-                      <br /> bir necha soniyada akkaunt yarat
+                      {router.locale == "uz"
+                        ? "O'zingning elektron pochtang orqali bir necha soniyada akkaunt yarat"
+                        : router.locale == "en"
+                        ? "Create a profile in a seconds using your personal email"
+                        : "Создай профиль с помощью своей электронной почты за считанные секунды"}
                     </p>
                   </div>
                 </div>
@@ -186,10 +264,19 @@ export default function index() {
                     <i className="fas fa-shopping-bag"></i>
                   </IconButton>
                   <div>
-                    <h4>O`z do`koningni to`ldir</h4>
+                    <h4>
+                      {router.locale == "uz"
+                        ? "O`z do`koningni to`ldir"
+                        : router.locale == "en"
+                        ? "Fill your shop"
+                        : "Заполни свой магазин"}
+                    </h4>
                     <p>
-                      Mahsulotlarni qo`sh[nomlanishi, narxi, ko`rinishi]
-                      <br /> va sozlamalarini kiritgin
+                      {router.locale == "uz"
+                        ? "Mahsulotlarni qo`sh[nomlanishi, narxi, ko`rinishi] va sozlamalarini kiritgin"
+                        : router.locale == "en"
+                        ? "Enter items [title, price, description, photo] and select some settings"
+                        : "Внеси товары [названия, цены, описания, фото] и выбери некоторые настройки"}
                     </p>
                   </div>
                 </div>
@@ -198,11 +285,19 @@ export default function index() {
                     <i className="fas fa-heart"></i>
                   </IconButton>
                   <div>
-                    <h4>Buyurtma olishni boshla</h4>
+                    <h4>
+                      {router.locale == "uz"
+                        ? "Buyurtma olishni boshla"
+                        : router.locale == "en"
+                        ? "Start receiving orders"
+                        : "Начни принимать заказы"}
+                    </h4>
                     <p>
-                      Buyurtmalarni o`z mijozinga taqdim et
-                      <br /> va buyurtmalarni <br /> va buyurtmalarni Telegram
-                      da qayta ishlashga imkon yarat
+                      {router.locale == "uz"
+                        ? "Buyurtmalarni o`z mijozinga taqdim et va buyurtmalarni va buyurtmalarni Telegramda qayta ishlashga imkon yarat"
+                        : router.locale == "en"
+                        ? "Show your customers the shop inside Telegram and start processing orders"
+                        : "Покажи своим клиентам магазин внутри Телеграм и начинай обрабатывать заказы"}
                     </p>
                   </div>
                 </div>
@@ -215,10 +310,19 @@ export default function index() {
       <div className="look-like pb-5">
         <Container>
           <div className="look-like-text text-center ">
-            <h1>Telegram do'kon qanday ko'rinishga ega?</h1>
+            <h1>
+              {router.locale == "uz"
+                ? "Telegram do'kon qanday ko'rinishga ega?"
+                : router.locale == "en"
+                ? "How does a Telegram shop looks like?"
+                : "Как выглядит магазин в Телеграм?"}
+            </h1>
             <p>
-              Asosiy menyu, kategoriyalar, mahsulotlar, savatcha, buyurtmani
-              rasmiylashtirish jarayoni
+              {router.locale == "uz"
+                ? "Asosiy menyu, kategoriyalar, mahsulotlar, savatcha, buyurtmani rasmiylashtirish jarayoni"
+                : router.locale == "en"
+                ? "Main menu, categories, products, cart, checkout process"
+                : "Главное меню, категории, продукты, корзина, процесс оформления заказа"}
             </p>
             <div className="text-center mt-5">
               <Row className="d-flex align-items-center">
@@ -227,22 +331,38 @@ export default function index() {
                     <IconButton className="icon-btn">
                       <i className="fas fa-home"></i>
                     </IconButton>
-                    <h4>Asosiy menyu</h4>
+                    <h4>
+                      {router.locale == "uz"
+                        ? "Asosiy menyu"
+                        : router.locale == "en"
+                        ? "Main menu"
+                        : "Главное меню"}
+                    </h4>
                     <p>
-                      Buyurtma berish knopkasi(ichida kategoriyalar va
-                      mahsulotlar), Sozlamalar, Biz haqimizda, Fikr qoldirish va
-                      Mening buyurtmalarim
+                      {router.locale == "uz"
+                        ? "Buyurtma berish knopkasi(ichida kategoriyalar va mahsulotlar), Sozlamalar, Biz haqimizda, Fikr qoldirish va Mening buyurtmalarim"
+                        : router.locale == "en"
+                        ? "Order button with categories and products under the hood, Settings, About us, Feedback and My orders"
+                        : "Кнопка Заказать за которой скрыта Категории магазина, Настройки, О нас, Поддержка и Мои заказы"}
                     </p>
                   </div>
                   <div className="cool ">
                     <IconButton className="icon-btn">
                       <i className="fas fa-shopping-bag"></i>
                     </IconButton>
-                    <h4>Kategoriyalar va mahsulotlar</h4>
+                    <h4>
+                      {router.locale == "uz"
+                        ? "Kategoriyalar va mahsulotlar"
+                        : router.locale == "en"
+                        ? "Categories and Products"
+                        : "Категории и Продукты"}
+                    </h4>
                     <p>
-                      Kategoriyalar ichida boshqa kategoriyalar yoki mahsulotlar
-                      bo'lishi mumkin, mahsulotlarning tavsifi, rasmi va narxi
-                      mavjud
+                      {router.locale == "uz"
+                        ? "Kategoriyalar ichida boshqa kategoriyalar yoki mahsulotlar bo'lishi mumkin, mahsulotlarning tavsifi, rasmi va narxi mavjud"
+                        : router.locale == "en"
+                        ? "Categories may contain subcategories or products, products have description, photo and price"
+                        : "Категории могут содержать подкатегории либо продукты, у продуктов есть описание, фото и цена"}
                     </p>
                   </div>
                 </Col>
@@ -267,21 +387,39 @@ export default function index() {
                     <IconButton className="icon-btn">
                       <i className="fas fa-shopping-cart"></i>
                     </IconButton>
-                    <h4>Rasmiylashtirish jarayoni</h4>
+                    <h4>
+                      {router.locale == "uz"
+                        ? "Rasmiylashtirish jarayoni"
+                        : router.locale == "en"
+                        ? "Checkout process"
+                        : "Процесс оформления заказа"}
+                    </h4>
                     <p>
-                      Xaridor to'lov turini tanlashi mumkin, yetkazib berish
-                      turini(yetkazish yoki olib ketish), adres jo'natishi
-                      mumkin(tekst yoki lokatsiya)
+                      {router.locale == "uz"
+                        ? "Xaridor to'lov turini tanlashi mumkin, yetkazib berish turini(yetkazish yoki olib ketish), adres jo'natishi mumkin(tekst yoki lokatsiya)"
+                        : router.locale == "en"
+                        ? "Client can choose payment type, delivery type(delivery or pickup), send address(text or location)"
+                        : "Клиент может выбрать способ оплаты, тип получения (доставка или самовывоз),  отправить адрес(текст или локацию)"}
                     </p>
                   </div>
                   <div className="cool ">
                     <IconButton className="icon-btn">
                       <i className="fas fa-cog"></i>
                     </IconButton>
-                    <h4>Hammasi Boshqaruv panelida</h4>
+                    <h4>
+                      {" "}
+                      {router.locale == "uz"
+                        ? "Hammasi Boshqaruv panelida"
+                        : router.locale == "en"
+                        ? "Everything in Control Panel"
+                        : "Всё в Панели управления"}{" "}
+                    </h4>
                     <p>
-                      Do'konning barcha sozlamalari Boshqaruv Paneli orqali
-                      sozlanadi
+                      {router.locale == "uz"
+                        ? "Do'konning barcha sozlamalari Boshqaruv Paneli orqali sozlanadi"
+                        : router.locale == "en"
+                        ? "All shop settings can be configured in Shop Control Panel"
+                        : "Весь магазин настраивается полностью из Панеля управления магазином"}
                     </p>
                   </div>
                 </Col>
@@ -295,13 +433,35 @@ export default function index() {
       <div className="pricing py-5">
         <Container>
           <div className="text-center price-text">
-            <h1>Narxlar</h1>
-            <p>
-              Birinchi oy <strong>bepul</strong>, barcha funksiyalardan
-              foydalanish imkoniyati mavjud.
-              <br />
-              Abonent to'lovi ikkinchi oydan boshlab to'lanishi kerak.
-            </p>
+            <h1>
+              {" "}
+              {router.locale == "uz"
+                ? "Narxlar"
+                : router.locale == "en"
+                ? "Pricing"
+                : "Цены"}
+            </h1>
+            {router.locale == "uz" ? (
+              <p>
+                Birinchi oy <strong>bepul</strong>, barcha funksiyalardan
+                foydalanish imkoniyati mavjud.
+                <br />
+                Abonent to'lovi ikkinchi oydan boshlab to'lanishi kerak.
+              </p>
+            ) : router.locale == "en" ? (
+              <p>
+                First month is <strong>free</strong>, you can use all of the
+                functions of our platform.
+                <br />
+                Monthly fee should be paid from second month.
+              </p>
+            ) : (
+              <p>
+                Первый месяц <strong>бесплатный</strong>, есть возможность
+                использовать все функции.
+                <br /> Абонентскую плату нужно платить со второго месяца.
+              </p>
+            )}
           </div>
           <div className="card">
             <Row>
@@ -310,23 +470,43 @@ export default function index() {
                   <ul>
                     <li>
                       <i className="fas fa-check-circle fa-2x"></i>
-                      Do`konning panel boshqaruvi
+                      {router.locale == "uz"
+                        ? "Do`konning panel boshqaruvi"
+                        : router.locale == "en"
+                        ? "Shop control panel                        "
+                        : "Панель управления магазином"}
                     </li>
                     <li>
                       <i className="fas fa-check-circle fa-2x"></i>
-                      Mahsulotlar, buyurtmalar, mijozlar
+                      {router.locale == "uz"
+                        ? "Mahsulotlar, buyurtmalar, mijozlar"
+                        : router.locale == "en"
+                        ? "Products, orders, customers"
+                        : "Продукты, заказы, клиенты"}
                     </li>
                     <li>
                       <i className="fas fa-check-circle fa-2x"></i>
-                      Aqlli analitika
+                      {router.locale == "uz"
+                        ? "Aqlli analitika"
+                        : router.locale == "en"
+                        ? "Smart analytics                        "
+                        : "Умная аналитика"}
                     </li>
                     <li>
                       <i className="fas fa-check-circle fa-2x"></i>
-                      Aqlli push kompaniyasi
+                      {router.locale == "uz"
+                        ? "Aqlli push kompaniyasi"
+                        : router.locale == "en"
+                        ? "Payment systems"
+                        : "Умная пуш кампания"}
                     </li>
                     <li>
                       <i className="fas fa-check-circle fa-2x"></i>
-                      To'lov sistemalari
+                      {router.locale == "uz"
+                        ? "To'lov sistemalari"
+                        : router.locale == "en"
+                        ? "Smart push companies"
+                        : "Платежные системы"}
                     </li>
                   </ul>
                 </div>
@@ -334,15 +514,33 @@ export default function index() {
               <Col xxl={6} xl={6} lg={6}>
                 <div className="right-card">
                   <h1>
-                    $6.9<span>/oy</span>
+                    $6.9
+                    <span>
+                      /
+                      {router.locale == "uz"
+                        ? "oy"
+                        : router.locale == "en"
+                        ? "month"
+                        : "мес"}
+                    </span>
                   </h1>
-                  <p>ikkinchi oydan boshlab</p>
+                  <p>
+                    {router.locale == "uz"
+                      ? "ikkinchi oydan boshlab"
+                      : router.locale == "en"
+                      ? "Beginning from second month"
+                      : "начиная со второго месяца"}
+                  </p>
                   <Button
                     variant="contained"
                     href="https://app.botcommerce.io"
                     className="fluid"
                   >
-                    Ulanish
+                    {router.locale == "uz"
+                      ? "Ulanish"
+                      : router.locale == "en"
+                      ? "Connect"
+                      : "Подключиться"}
                   </Button>
                 </div>
               </Col>
@@ -355,48 +553,40 @@ export default function index() {
       <div className="why-choose-us">
         <Container>
           <div className="why-text text-center">
-            <h1>Nima uchun aynan biz?</h1>
-            <p>
-              Bizda do'kon yaratib, biznesingizni
-              <br /> yangi darajaga olib chiqing va savdoni oshiring.
-            </p>
+            <h1>
+              {router.locale == "uz"
+                ? "Nima uchun aynan biz?"
+                : router.locale == "en"
+                ? ""
+                : "Почему выбрать нас?"}
+            </h1>
+            {router.locale == "uz"}
           </div>
           <div className="cards text-center">
             <Row>
-              <Col xxl={4} xl={4} xs={12}>
-                <div className="box">
-                  <IconButton className="blue-btn">
-                    {/* <i class="fas fa-comment-alt"></i> */}
-                  </IconButton>
-                  <h2>Doimiy yangilanish va yordam</h2>
-                  <p>
-                    Biz doim sistemamizni monitoring qilib
-                    <br /> turamiz, yangiliklar kiritamiz va yordam beramiz
-                  </p>
-                </div>
-              </Col>
-              <Col xxl={4} xl={4} xs={12}>
-                <div className="box">
-                  <IconButton className="blue-btn">
-                    {/* <i class="fas fa-comment-alt"></i> */}
-                  </IconButton>
-                  <h2>Qulay va oson ishlatiliashi</h2>
-                  <p>
-                    Juda zo`r va
-                    <br /> qulay boshqarish paneli
-                  </p>
-                </div>
-              </Col>
-              <Col xxl={4} xl={4} xs={12}>
-                <div className="box">
-                  <IconButton className="blue-btn">{/*  */}</IconButton>
-                  <h2>Arzonligi</h2>
-                  <p>
-                    Faqatgina qo`shimcha funksiyalar uchun to`lang,
-                    <br /> o`zingizga ijozat bergan holatda
-                  </p>
-                </div>
-              </Col>
+              {card.map((item) => (
+                <Col key={item.id} xxl={4} xl={4} xs={12}>
+                  <div className="box">
+                    <IconButton className="blue-btn">
+                      {/* <i class="fas fa-comment-alt"></i> */}
+                    </IconButton>
+                    <h2>
+                      {router.locale == "uz"
+                        ? item.title_uz
+                        : router.locale == "en"
+                        ? item.title_en
+                        : item.title_ru}
+                    </h2>
+                    <p>
+                      {router.locale == "uz"
+                        ? item.body_uz
+                        : router.locale == "en"
+                        ? item.body_en
+                        : item.body_ru}
+                    </p>
+                  </div>
+                </Col>
+              ))}
             </Row>
           </div>
         </Container>
@@ -406,11 +596,22 @@ export default function index() {
         <Container>
           <Row className="d-flex align-items-center">
             <Col xxl={6} xl={6} lg={6} md={6} sm={12}>
-              <h4>Hali ham savolingiz bormi?</h4>
+              <h4>
+                {router.locale == "uz"
+                  ? "Hali ham savolingiz bormi?"
+                  : router.locale == "en"
+                  ? "Still have a question"
+                  : "Остались вопросы?"}
+              </h4>
             </Col>
             <Col xxl={6} xl={6} lg={6} md={6} sm={12}>
               <h4>
-                <a href="tel:+998993698462">+998(91)408-66-08</a> online yozing
+                <a href="tel:+998993698462">+998(91)408-66-08</a>{" "}
+                {router.locale == "uz"
+                  ? "online yozing"
+                  : router.locale == "en"
+                  ? "or you write"
+                  : "или напишите"}
                 <a href="https://t.me/botcommerceio"> @botcommerceio</a>
               </h4>
             </Col>
@@ -429,17 +630,39 @@ export default function index() {
             <Col xxl={6} xl={6} lg={8} md={8}>
               <ul>
                 <li>
-                  <a href="#home">Asosiy</a>
+                  <a href="#home">
+                    {router.locale == "uz"
+                      ? "Asosiy"
+                      : router.locale == "en"
+                      ? "Home"
+                      : "Главная "}
+                  </a>
                 </li>
                 <li>
-                  <a href="#How-it-work">Bu qanday ishlaydi</a>
+                  <a href="#How-it-work">
+                    {router.locale == "uz"
+                      ? "Bu qanday ishlaydi?"
+                      : router.locale == "en"
+                      ? "How it work?"
+                      : "Как это работает?"}
+                  </a>
                 </li>
                 <li>
-                  <a href="#pricing">Narxlar</a>
+                  <a href="#pricing">
+                    {router.locale == "uz"
+                      ? "Narxlar"
+                      : router.locale == "en"
+                      ? "Prices"
+                      : "Цены"}
+                  </a>
                 </li>
                 <li>
                   <Button variant="outlined" href="https://app.botcommerce.io">
-                    Do`kon yaratish
+                    {router.locale == "uz"
+                      ? "Do`kon yaratish"
+                      : router.locale == "en"
+                      ? "Create shop"
+                      : "Создать"}
                   </Button>
                 </li>
               </ul>
