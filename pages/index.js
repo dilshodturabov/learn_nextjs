@@ -1,4 +1,3 @@
-import React from "react";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import Head from "next/head";
@@ -27,7 +26,7 @@ import BotHow from "../public/bot_how.svg";
 import Phone from "../public/1hq.jpg";
 import WhiteLogo from "../public/logo_white.svg";
 export default function index() {
-  let router = useRouter();
+  const router = useRouter();
 
   const card = [
     {
@@ -68,7 +67,7 @@ export default function index() {
   ];
 
   return (
-    <div>
+    <>
       <Head>
         <link
           rel="stylesheet"
@@ -681,6 +680,6 @@ export default function index() {
           </div>
         </Container>
       </footer>
-    </div>
+    </>
   );
 }
